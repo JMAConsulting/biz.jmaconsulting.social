@@ -1,0 +1,198 @@
+.civisocial-wrapper * {
+	/*outline: 1px solid green;*/
+}
+
+.container {
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.stat-box {
+  color: #fff;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  display: inline-block;
+  padding: 5px;
+  padding-left: 50px;
+  margin-right: 10px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 10px center;
+  border-radius: 5px;
+}
+
+.stat-box .stat {
+  display: inline-block;
+  padding: 3px 8px;
+}
+
+.stat-box .count {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stat-box .label {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.make-post {
+}
+
+.make-post textarea {
+  height: 80px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.make-post .post-to {
+  padding: 5px 0;
+}
+
+.make-post .post-to div {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.make-post,
+.activity {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 10px center;
+  margin-bottom: 10px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.twitter-activity {
+  background-image: url("../img/twitter.svg");
+  fill: red;
+}
+
+.activity .logo,
+.activity .avatar {
+  margin-right: 10px;
+  float: left;
+  display: inline-block;
+}
+
+.activity .logo {
+  width: 20px;
+  height: 20px;
+  background-size: 18px 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.activity .avatar img {
+  width: 40px;
+  height: 40px;
+}
+
+.activity .message {
+  float: left;
+  font-size: 14px;
+}
+
+.activity ul.actions {
+  font-size: 11px;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+}
+
+.activity .quoted-status {
+  margin-top: 10px;
+}
+
+ul.actions li {
+  display: inline-block;
+}
+
+ul.actions li:after {
+  content: ' \b7 ';
+}
+
+ul.actions li:last-child:after {
+  content: '';
+}
+
+.message .posted-by {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.message a.media {
+  display: block;
+}
+
+.message .activity-status {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.activity.follower {
+  display: inline-block;
+  margin: 5px;
+  width: 200px;
+}
+
+.follower .info .name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.follower .avatar img {
+  width: 50px;
+  height: 50px;
+}
+
+.cursor {
+  height: 100%;
+  overflow: hidden;
+}
+
+div.cursor ul {
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cursor ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+.cursor ul li a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ddd;
+  line-height: 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.cursor ul li a:hover {
+  background: #ddd;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(221, 221, 221, 0.5);
+  text-align: center;
+  background: rgba(221, 221, 221, 0.5) url('../img/rolling.gif') no-repeat center center;
+}

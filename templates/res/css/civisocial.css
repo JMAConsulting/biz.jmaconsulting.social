@@ -1,0 +1,299 @@
+.civisocial-wrapper {
+}
+
+.civisocial-box {
+  max-width: 500px;
+  display: block;
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.stats > * {
+  vertical-align: top;
+}
+
+.civisocial-box-inline {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.civisocial-box .box-item {
+  display: inline-block;
+  margin: 0.3em 0;
+}
+
+.box-item .content,
+.box-item .image {
+  float: left;
+}
+.box-item .content {
+  text-align: left;
+  padding-left: 1em;
+}
+.box-item .image {
+  position: relative;
+
+}
+
+.box-item .image,
+.box-item .image img {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+}
+
+.box-item .image .logo {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  left: 0;
+  background-size: 18px 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.box-item .name {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.civisocial-wrapper .login-status {
+  padding: 0.4em ;
+  padding-left: 45px;
+  border-color: #bce8f1;
+  color: #fff;
+  height: 100%;
+  overflow: hidden;
+  background-size: 25px 25px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 0.5em 0;
+  font-weight: normal;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.20);
+  position: relative;
+}
+
+.civisocial-wrapper .login-status a.picture {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  float: left;
+}
+
+.civisocial-wrapper .login-status a.picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.civisocial-wrapper .login-status p {
+  display: inline-block;
+  margin: 0;
+  line-height: 25px;
+  vertical-align: middle;
+  float: left;
+}
+
+.civisocial-wrapper .login-status p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.civisocial-wrapper .login-status p a:hover {
+  text-decoration: none;
+}
+
+.civisocial-wrapper .login-status p.logout {
+  display: block;
+  position: absolute;
+  right: 10px;
+
+}
+
+/* Social Buttons Style */
+.btn, .civisocial-wrapper a.btn {
+  display: inline-block;
+  background-position: 1em;
+  background-repeat: no-repeat;
+  background-size: 1.8em;
+  border-radius: 0.5em;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  height: 2.5em;
+  line-height: 2.5em;
+  vertical-align: center;
+  padding: 0 1em 0 4em;
+  text-decoration: none;
+  color: #fff;
+  margin: 0.3em;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+/* Facebook */
+.bg-facebook {
+  background-color: #3b5998;
+  background-image: url("../img/facebook.svg");
+}
+.btn-facebook:hover {
+  background-color: #4c70ba;
+}
+.btn-facebook:active {
+  background-color: #2d4373;
+}
+
+/* Google Plus */
+.bg-googleplus {
+  background-color: #dd4b39;
+  background-image: url("../img/googleplus.svg");
+}
+.btn-googleplus:hover {
+  background-color: #e47365;
+}
+.btn-googleplus:active {
+  background-color: #c23321;
+}
+
+/* Twitter */
+.bg-twitter {
+  background-color: #00aced;
+  background-image: url("../img/twitter.svg");
+}
+.btn-twitter:hover {
+  background-color: #21c2ff;
+}
+.btn-twitter:active {
+  background-color: #0087ba;
+}
+
+/* Microsoft */
+.bg-microsoft {
+  background-color: #e3b30d;
+  background-image: url("../img/microsoft.svg");
+}
+.btn-microsoft:hover {
+  background-color: #f3c730;
+}
+.btn-microsoft:active {
+  background-color: #b38d0a;
+}
+
+/* Github*/
+.bg-github {
+  background-color: #2a2a2a;
+  background-image: url("../img/github.svg");
+}
+.btn-github:hover {
+  background-color: #444444;
+}
+.btn-github:active {
+  background-color: #101010;
+}
+
+/* Foursquare*/
+.bg-foursquare {
+  background-color: #95c330;
+  background-image: url("../img/foursquare.svg");
+}
+.btn-foursquare:hover {
+  background-color: #abd452;
+}
+.btn-foursquare:active {
+  background-color: #769a26;
+}
+
+/* Instagram */
+.bg-instagram {
+  background-color: #906248;
+  background-image: url("../img/instagram.svg");
+}
+.btn-instagram:hover {
+  background-color: #ae7a5d;
+}
+.btn-instagram:active {
+  background-color: #6e4b37;
+}
+
+/* LinkedIn */
+.bg-linkedin {
+  background-color: #0b5ea3;
+  background-image: url("../img/linkedin.svg");
+}
+.btn-linkedin:hover {
+  background-color: #0e7ad3;
+}
+.btn-linkedin:active {
+  background-color: #084273;
+}
+
+/* Dropbox */
+.bg-dropbox {
+  background-color: #1b73d1;
+  background-image: url("../img/dropbox.svg");
+}
+.btn-dropbox:hover {
+  background-color: #3a8de5;
+}
+.btn-dropbox:active {
+  background-color: #155aa4;
+}
+
+/* BitBucket*/
+.bg-bitbucket {
+  background-color: #205081;
+  background-image: url("../img/bitbucket.svg");
+}
+.btn-bitbucket:hover {
+  background-color: #3572B0;
+}
+.btn-bitbucket:active {
+  background-color: ##4E8AC7;
+}
+
+/* Admin Page */
+.label-social label {
+  line-height: 2.5em;
+}
+
+/* Select Style */
+.select {
+  position: relative;
+  display: inline-block;
+}
+
+.select select {
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+}
+
+.select select::-ms-expand {
+  display: none;
+}
+
+/* Checkbox */
+label.input,
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}

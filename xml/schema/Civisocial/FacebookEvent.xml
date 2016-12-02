@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Civisocial</base>
+  <class>FacebookEvent</class>
+  <name>civicrm_civisocial_facebook_event</name>
+  <comment>Map between CiviCRM event and Facebook Event</comment>
+  <add>4.7</add>
+
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <title>Map ID</title>
+    <import>true</import>
+    <required>true</required>
+    <comment>Map ID</comment>
+    <add>4.7</add>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+
+  <field> 
+    <name>event_id</name> 
+    <title>CiviCRM Event ID</title>
+    <type>int unsigned</type> 
+    <comment>FK to civicrm_event</comment>
+    <add>4.7</add> 
+  </field> 
+  <foreignKey> 
+    <name>event_id</name> 
+    <table>civicrm_event</table> 
+    <key>id</key> 
+    <add>4.7</add> 
+    <onDelete>CASCADE</onDelete>
+  </foreignKey>
+
+  <field>
+    <name>facebook_event_id</name>
+    <title>Facebook Event ID</title>
+    <type>varchar</type>
+    <length>32</length>
+    <html>
+      <type>Text</type>
+      <size>32</size>
+    </html>
+    <export>true</export>
+    <comment>Facebook Event ID</comment>
+    <add>4.7</add>
+  </field>
+
+</table>

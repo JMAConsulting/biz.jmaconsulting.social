@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Civisocial</base>
+  <class>CivisocialUser</class>
+  <name>civicrm_civisocial_user</name>
+  <comment>User objects are defined by a civicrm_civisocial_user record plus a related civicrm_contact record.</comment>
+  <add>4.6</add>
+
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <title>Civisocial User ID</title>
+    <import>true</import>
+    <required>true</required>
+    <comment>Unique User ID</comment>
+    <add>4.6</add>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+
+  <field> 
+    <name>contact_id</name> 
+    <title>Contact ID</title>
+    <type>int unsigned</type> 
+    <comment>FK to Contact ID that owns that account</comment>
+    <add>4.6</add> 
+  </field> 
+  <foreignKey> 
+    <name>contact_id</name> 
+    <table>civicrm_contact</table> 
+    <key>id</key> 
+    <add>4.6</add> 
+    <onDelete>SET NULL</onDelete>
+  </foreignKey>
+
+  <field>
+    <name>oauth_provider</name>
+    <title>OAuth Provider</title>
+    <type>varchar</type>
+    <length>128</length>
+    <html>
+      <type>Text</type>
+      <size>30</size>
+    </html>
+    <export>true</export>
+    <comment>OAuth Provider</comment>
+    <add>4.6</add>
+  </field>
+
+  <field>
+    <name>social_user_id</name>
+    <title>OAuth Provider User ID</title>
+    <type>varchar</type>
+    <length>128</length>
+    <export>true</export>
+    <required>false</required>
+    <default>NULL</default>
+    <comment>User identifier given by OAuth Provider</comment>
+    <add>4.6</add>
+  </field>
+
+  <field>
+    <name>access_token</name>
+    <title>Access Token provided by OAuth Provider</title>
+    <type>varchar</type>
+    <length>511</length>
+    <export>true</export>
+    <required>false</required>
+    <default>NULL</default>
+    <comment>Access Token Provided by OAuth Provider</comment>
+    <add>4.6</add>
+  </field>
+
+  <field>
+    <name>created_date</name>
+    <type>timestamp</type>
+    <comment>When was the civisocial user was created.</comment>
+    <required>false</required>
+    <export>true</export>
+    <default>NULL</default>
+    <add>4.6</add>
+  </field>
+  
+  <field>
+    <name>modified_date</name>
+    <type>timestamp</type>
+    <comment>When was the the civisocial user was created or modified or deleted.</comment>
+    <required>false</required>
+    <export>true</export>
+    <default>CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP</default>
+    <add>4.6</add>
+  </field>
+</table>
