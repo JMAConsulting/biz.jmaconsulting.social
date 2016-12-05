@@ -1,14 +1,14 @@
 <?php
 
-require_once 'civisocial.civix.php';
+require_once 'social.civix.php';
 
 /**
  * Implements hook_civicrm_config().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
  */
-function civisocial_civicrm_config(&$config) {
-  _civisocial_civix_civicrm_config($config);
+function social_civicrm_config(&$config) {
+  _social_civix_civicrm_config($config);
 }
 
 /**
@@ -18,8 +18,8 @@ function civisocial_civicrm_config(&$config) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_xmlMenu
  */
-function civisocial_civicrm_xmlMenu(&$files) {
-  _civisocial_civix_civicrm_xmlMenu($files);
+function social_civicrm_xmlMenu(&$files) {
+  _social_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -27,8 +27,8 @@ function civisocial_civicrm_xmlMenu(&$files) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_install
  */
-function civisocial_civicrm_install() {
-  _civisocial_civix_civicrm_install();
+function social_civicrm_install() {
+  _social_civix_civicrm_install();
 }
 
 /**
@@ -36,8 +36,8 @@ function civisocial_civicrm_install() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_uninstall
  */
-function civisocial_civicrm_uninstall() {
-  _civisocial_civix_civicrm_uninstall();
+function social_civicrm_uninstall() {
+  _social_civix_civicrm_uninstall();
 }
 
 /**
@@ -45,8 +45,8 @@ function civisocial_civicrm_uninstall() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
-function civisocial_civicrm_enable() {
-  _civisocial_civix_civicrm_enable();
+function social_civicrm_enable() {
+  _social_civix_civicrm_enable();
 }
 
 /**
@@ -54,8 +54,8 @@ function civisocial_civicrm_enable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
-function civisocial_civicrm_disable() {
-  _civisocial_civix_civicrm_disable();
+function social_civicrm_disable() {
+  _social_civix_civicrm_disable();
 }
 
 /**
@@ -63,8 +63,8 @@ function civisocial_civicrm_disable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
-function civisocial_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _civisocial_civix_civicrm_upgrade($op, $queue);
+function social_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  return _social_civix_civicrm_upgrade($op, $queue);
 }
 
 /**
@@ -75,8 +75,8 @@ function civisocial_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_managed
  */
-function civisocial_civicrm_managed(&$entities) {
-  _civisocial_civix_civicrm_managed($entities);
+function social_civicrm_managed(&$entities) {
+  _social_civix_civicrm_managed($entities);
 }
 
 /**
@@ -88,8 +88,8 @@ function civisocial_civicrm_managed(&$entities) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function civisocial_civicrm_caseTypes(&$caseTypes) {
-  _civisocial_civix_civicrm_caseTypes($caseTypes);
+function social_civicrm_caseTypes(&$caseTypes) {
+  _social_civix_civicrm_caseTypes($caseTypes);
 }
 
 /**
@@ -102,8 +102,8 @@ function civisocial_civicrm_caseTypes(&$caseTypes) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function civisocial_civicrm_angularModules(&$angularModules) {
-  _civisocial_civix_civicrm_angularModules($angularModules);
+function social_civicrm_angularModules(&$angularModules) {
+  _social_civix_civicrm_angularModules($angularModules);
 }
 
 /**
@@ -111,14 +111,14 @@ function civisocial_civicrm_angularModules(&$angularModules) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_alterSettingsFolders
  */
-function civisocial_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
-  _civisocial_civix_civicrm_alterSettingsFolders($metaDataFolders);
+function social_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
+  _social_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
 
 /**
  * Include the settings page in civicrm navigation menu.
  */
-function civisocial_civicrm_navigationMenu(&$params) {
+function social_civicrm_navigationMenu(&$params) {
   $maxID = CRM_Core_DAO::singleValueQuery("SELECT max(id) FROM civicrm_navigation") + 300;
   $administerMenuID = CRM_Core_DAO::getFieldValue('CRM_Core_BAO_Navigation', 'Administer', 'id', 'name');
 
@@ -139,7 +139,7 @@ function civisocial_civicrm_navigationMenu(&$params) {
         'attributes' => array(
           'label'      => 'Dashboard',
           'name'       => 'Dashboard',
-          'url'        => 'civicrm/civisocial/dashboard',
+          'url'        => 'civicrm/social/dashboard',
           'permission' => 'access CiviReport',
           'operator'   => NULL,
           'separator'  => 1,
@@ -152,7 +152,7 @@ function civisocial_civicrm_navigationMenu(&$params) {
         'attributes' => array(
           'label'      => 'Facebook',
           'name'       => 'Facebook',
-          'url'        => 'civicrm/civisocial/dashboard/facebook',
+          'url'        => 'civicrm/social/dashboard/facebook',
           'permission' => 'access CiviReport',
           'operator'   => NULL,
           'separator'  => NULL,
@@ -165,7 +165,7 @@ function civisocial_civicrm_navigationMenu(&$params) {
         'attributes' => array(
           'label'      => 'Twitter',
           'name'       => 'Twitter',
-          'url'        => 'civicrm/civisocial/dashboard/twitter',
+          'url'        => 'civicrm/social/dashboard/twitter',
           'permission' => 'access CiviReport',
           'operator'   => NULL,
           'separator'  => NULL,
@@ -179,8 +179,8 @@ function civisocial_civicrm_navigationMenu(&$params) {
 
   $params[$administerMenuID]['child'][$maxID + 1] = array(
     'attributes' => array(
-      'label' => 'CiviSocial',
-      'name' => 'CiviSocial',
+      'label' => 'Social',
+      'name' => 'Social',
       'url' => NULL,
       'permission' => 'administer CiviReport',
       'operator' => NULL,
@@ -195,7 +195,7 @@ function civisocial_civicrm_navigationMenu(&$params) {
           // @todo: Better name?
           'label' => 'App Credentials',
           'name' => 'App Credentials',
-          'url' => 'civicrm/admin/civisocial/appcredentials',
+          'url' => 'civicrm/admin/social/appcredentials',
           'permission' => 'administer CiviReport',
           'operator' => NULL,
           'separator' => NULL,
@@ -209,7 +209,7 @@ function civisocial_civicrm_navigationMenu(&$params) {
           // @todo: Better name?
           'label' => 'Social Networks',
           'name' => 'Social Newtorks',
-          'url' => 'civicrm/admin/civisocial/networks',
+          'url' => 'civicrm/admin/social/networks',
           'permission' => 'administer CiviReport',
           'operator' => NULL,
           'separator' => NULL,
@@ -222,7 +222,7 @@ function civisocial_civicrm_navigationMenu(&$params) {
   );
 }
 
-function civisocial_civicrm_buildForm($formName, &$form) {
+function social_civicrm_buildForm($formName, &$form) {
   $session = CRM_Core_Session::singleton();
   $currentUrl = rawurlencode(CRM_Utils_System::url(ltrim($_SERVER['REQUEST_URI'], '/'), NULL, TRUE, NULL, FALSE));
   $fbEventEnabled = civicrm_api3('Setting', 'getvalue', array('name' => 'integrate_facebook_events'));
@@ -232,7 +232,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
       // Check if connected to facebook
       $fbAccessToken = $session->get('facebook_access_token');
       if ($fbAccessToken) {
-        $facebook = new CRM_Civisocial_OAuthProvider_Facebook($fbAccessToken);
+        $facebook = new CRM_Social_OAuthProvider_Facebook($fbAccessToken);
         if ($facebook->isAuthorized()) {
           $form->assign('fbConnected', TRUE);
 
@@ -246,7 +246,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
             );
 
             $defaults = array();
-            CRM_Civisocial_BAO_FacebookEvent::retrieve($params, $defaults);
+            CRM_Social_BAO_FacebookEvent::retrieve($params, $defaults);
             $eventUrl = "https://www.facebook.com/events/{$defaults['facebook_event_id']}/";
             if (!empty($defaults)) {
               $form->setDefaults(array('facebook_event_url' => $eventUrl));
@@ -264,7 +264,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
       CRM_Core_Region::instance('page-body')->add(array(
         'template' => 'OAuthProvider/Facebook/FacebookEventURLField.tpl',
       ));
-      CRM_Core_Resources::singleton()->addScriptFile('org.civicrm.civisocial', 'templates/res/js/facebook-event.js');
+      CRM_Core_Resources::singleton()->addScriptFile('biz.jmaconsulting.social', 'templates/res/js/facebook-event.js');
 
     }
 
@@ -273,7 +273,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
   }
   elseif ('CRM_Event_Form_Registration_Confirm' == $formName) {
     if ($fbEventEnabled) {
-      $facebook = new CRM_Civisocial_OAuthProvider_Facebook();
+      $facebook = new CRM_Social_OAuthProvider_Facebook();
       if ($facebook->isLoggedIn()) {
         // Check if the Facebook user is authorized
         $facebook->setAccessToken($session->get('facebook_access_token'));
@@ -285,7 +285,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
             'event_id' => $form->get('id'),
           );
           $defaults = array();
-          CRM_Civisocial_BAO_FacebookEvent::retrieve($params, $defaults);
+          CRM_Social_BAO_FacebookEvent::retrieve($params, $defaults);
 
           if (!empty($defaults)) {
             $form->add('checkbox', 'facebook_rsvp_event', ts('RSVP on Facebook'));
@@ -300,7 +300,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
   elseif ('CRM_Event_Form_Registration_ThankYou' == $formName) {
     $rsvpSet = $session->get('facbeook_rsvp_set');
     if ($fbEventEnabled && $rsvpSet) {
-      $facebook = new CRM_Civisocial_OAuthProvider_Facebook();
+      $facebook = new CRM_Social_OAuthProvider_Facebook();
       if ($facebook->isLoggedIn()) {
         $facebook->setAccessToken($session->get('facebook_access_token'));
         if ($facebook->isAuthorized()) {
@@ -311,7 +311,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
             'event_id' => $eventId,
           );
           $defaults = array();
-          CRM_Civisocial_BAO_FacebookEvent::retrieve($params, $defaults);
+          CRM_Social_BAO_FacebookEvent::retrieve($params, $defaults);
           if (!empty($defaults)) {
             // Facebook event map exists
             // Get facebook event information
@@ -341,7 +341,7 @@ function civisocial_civicrm_buildForm($formName, &$form) {
 /**
  * Validate Facbeook Event Id field.
  */
-function civisocial_civicrm_validateForm($formName, &$fields, &$files, &$form, &$errors) {
+function social_civicrm_validateForm($formName, &$fields, &$files, &$form, &$errors) {
   $session = CRM_Core_Session::singleton();
   if ('CRM_Event_Form_ManageEvent_EventInfo' == $formName) {
     // Server side validation
@@ -350,7 +350,7 @@ function civisocial_civicrm_validateForm($formName, &$fields, &$files, &$form, &
       // or connected to Facebook page
       $fbAccessToken = $session->get('facebook_access_token');
       if ($fbAccessToken) {
-        $facebook = new CRM_Civisocial_OAuthProvider_Facebook($fbAccessToken);
+        $facebook = new CRM_Social_OAuthProvider_Facebook($fbAccessToken);
         if ($facebook->isAuthorized()) {
           // Check if the reocord for the given event already exists.
           $fbEventUrl = $form->_submitValues['facebook_event_url'];
@@ -383,7 +383,7 @@ function civisocial_civicrm_validateForm($formName, &$fields, &$files, &$form, &
   }
 }
 
-function civisocial_civicrm_preProcess($formName, &$form) {
+function social_civicrm_preProcess($formName, &$form) {
   if ('CRM_Event_Form_Registration_ThankYou' == $formName) {
     // Check if user chose to RSVP on Facebook
     $session = CRM_Core_Session::singleton();
@@ -392,7 +392,7 @@ function civisocial_civicrm_preProcess($formName, &$form) {
       $eventId = $form->get('id');
       $qfKey = $form->get('qfKey');
       $thankyouUrl = rawurlencode(CRM_Utils_System::url("civicrm/event/register?_qf_ThankYou_display=true&qfKey={$qfKey}", NULL, TRUE));
-      $redirectUrl = CRM_Utils_System::url("civicrm/civisocial/event/rsvpfacebookevent?event_id={$eventId}&thankyou_url={$thankyouUrl}", NULL, TRUE);
+      $redirectUrl = CRM_Utils_System::url("civicrm/social/event/rsvpfacebookevent?event_id={$eventId}&thankyou_url={$thankyouUrl}", NULL, TRUE);
 
       $session->set('facebook_rsvp_event', NULL);
       CRM_Utils_System::redirect($redirectUrl);
@@ -400,7 +400,7 @@ function civisocial_civicrm_preProcess($formName, &$form) {
   }
 }
 
-function civisocial_civicrm_postProcess($formName, &$form) {
+function social_civicrm_postProcess($formName, &$form) {
   if ('CRM_Event_Form_ManageEvent_EventInfo' == $formName) {
     // Save Facebook Event ID to the database
     if (isset($form->_submitValues['facebook_event_url']) && !empty($form->_submitValues['facebook_event_url'])) {
@@ -414,14 +414,14 @@ function civisocial_civicrm_postProcess($formName, &$form) {
         'event_id' => $form->get('id'),
       );
       $defaults = array();
-      CRM_Civisocial_BAO_FacebookEvent::retrieve($params, $defaults);
+      CRM_Social_BAO_FacebookEvent::retrieve($params, $defaults);
 
       if (!empty($defaults)) {
         // Record already exists
         $params['id'] = $defaults['id'];
       }
       $params['facebook_event_id'] = $fbEventId;
-      CRM_Civisocial_BAO_FacebookEvent::create($params);
+      CRM_Social_BAO_FacebookEvent::create($params);
     }
   }
   elseif ('CRM_Event_Form_Registration_Confirm' == $formName) {
@@ -468,17 +468,17 @@ function autofillForm($formName, &$form) {
   $session = CRM_Core_Session::singleton();
   $smarty = CRM_Core_Smarty::singleton();
 
-  CRM_Core_Resources::singleton()->addStyleFile('org.civicrm.civisocial', 'templates/res/css/civisocial.css', 0, 'html-header');
+  CRM_Core_Resources::singleton()->addStyleFile('biz.jmaconsulting.social', 'templates/res/css/social.css', 0, 'html-header');
 
   $currentUrl = rawurlencode(CRM_Utils_System::url(ltrim($_SERVER['REQUEST_URI'], '/'), NULL, TRUE, NULL, FALSE));
   $smarty->assign('currentUrl', $currentUrl);
 
-  $oap = new CRM_Civisocial_OAuthProvider();
+  $oap = new CRM_Social_OAuthProvider();
   $oAuthProvider = $oap->isLoggedIn();
   if ($oAuthProvider) {
     // User is connected to some social network
     $token = $session->get("{$oAuthProvider}_access_token");
-    $className = "CRM_Civisocial_OAuthProvider_" . ucwords($oAuthProvider);
+    $className = "CRM_Social_OAuthProvider_" . ucwords($oAuthProvider);
     $oap = new $className($token);
 
     // Check if the user is still authorized
