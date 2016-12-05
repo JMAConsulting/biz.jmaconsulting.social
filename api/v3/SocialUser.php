@@ -7,9 +7,9 @@
  * @return int|bool
  *   Returns ID if exits, FALSE otherwise
  */
-function civicrm_api3_civisocial_user_socialUserExists($params) {
+function civicrm_api3_social_user_socialUserExists($params) {
   civicrm_api3_verify_mandatory($params, NULL, array('social_user_id', 'oauth_provider'));
-  return CRM_Civisocial_BAO_CivisocialUser::socialUserExists($params['social_user_id'], $params['oauth_provider']);
+  return CRM_Social_BAO_SocialUser::socialUserExists($params['social_user_id'], $params['oauth_provider']);
 }
 
 /**
@@ -20,9 +20,9 @@ function civicrm_api3_civisocial_user_socialUserExists($params) {
  * @return array
  *   Array of created values
  */
-function civicrm_api3_civisocial_user_create($params) {
+function civicrm_api3_social_user_create($params) {
   civicrm_api3_verify_mandatory($params, NULL, array('contact_id', 'social_user_id', 'oauth_provider'));
-  return _civicrm_api3_basic_create('CRM_Civisocial_BAO_CivisocialUser', $params);
+  return _civicrm_api3_basic_create('CRM_Social_BAO_SocialUser', $params);
 }
 
 /**
@@ -33,9 +33,9 @@ function civicrm_api3_civisocial_user_create($params) {
  * @return int
  *   Contact id of created/existing contact
  */
-function civicrm_api3_civisocial_user_createContact($params) {
+function civicrm_api3_social_user_createContact($params) {
   civicrm_api3_verify_mandatory($params, NULL, array('email, contact_type'));
-  return CRM_Civisocial_BAO_CivisocialUser::createContact($params);
+  return CRM_Social_BAO_SocialUser::createContact($params);
 }
 
 /**
@@ -43,7 +43,7 @@ function civicrm_api3_civisocial_user_createContact($params) {
  *
  * @param array $params
  */
-function civicrm_api3_civisocial_user_getFacebookEventInfo_spec($params) {
+function civicrm_api3_social_user_getFacebookEventInfo_spec($params) {
   $params['event_id']['api.required'] = 1;
   $params['event_id'] = array(
     'title' => 'Facebook Event ID',
@@ -60,13 +60,13 @@ function civicrm_api3_civisocial_user_getFacebookEventInfo_spec($params) {
  * @return array
  *   Array of Facebook event information or error messgaes
  */
-function civicrm_api3_civisocial_user_getFacebookEventInfo($params) {
+function civicrm_api3_social_user_getFacebookEventInfo($params) {
   // civicrm_api3_verify_mandatory($params, NULL, array('event_id'));
 
   $session = CRM_Core_Session::singleton();
   $fbAccessToken = $session->get('facebook_access_token');
   if ($fbAccessToken) {
-    $facebook = new CRM_Civisocial_OAuthProvider_Facebook($fbAccessToken);
+    $facebook = new CRM_Social_OAuthProvider_Facebook($fbAccessToken);
     if ($facebook->isAuthorized()) {
       $eventId = $params['event_id'];
       $eventInfo = $facebook->get($eventId, array('fields' => 'name,description,place,start_time,end_time'));
@@ -87,7 +87,7 @@ function civicrm_api3_civisocial_user_getFacebookEventInfo($params) {
  *
  * @param array $params
  */
-function civicrm_api3_civisocial_user_updateStatus_spec($params) {
+function civicrm_api3_social_user_updateStatus_spec($params) {
   $params['post_content']['api.required'] = 1;
   $params['post_content'] = array(
     'title' => 'Status/tweet to update',
@@ -103,7 +103,7 @@ function civicrm_api3_civisocial_user_updateStatus_spec($params) {
  *
  * @return array
  */
-function civicrm_api3_civisocial_user_updateStatus($params) {
+function civicrm_api3_social_user_updateStatus($params) {
   $session = CRM_Core_Session::singleton();
   $response = array();
 
@@ -112,7 +112,7 @@ function civicrm_api3_civisocial_user_updateStatus($params) {
     $fbAccessToken = $session->get('facebook_page_access_token');
     if ($pageId && $fbAccessToken) {
       // Connected to page
-      $facebook = new CRM_Civisocial_OAuthProvider_Facebook($fbAccessToken);
+      $facebook = new CRM_Social_OAuthProvider_Facebook($fbAccessToken);
       // Check if token is still valid
       $pageInfo = $facebook->get("{$pageId}?fields=name,picture");
       if ($pageInfo) {
@@ -135,7 +135,7 @@ function civicrm_api3_civisocial_user_updateStatus($params) {
     $twitterAccessToken = $session->get('twitter_access_token');
     if ($twitterId && $twitterAccessToken) {
       // Connected to Twitter
-      $twitter = new CRM_Civisocial_OAuthProvider_Twitter($twitterAccessToken);
+      $twitter = new CRM_Social_OAuthProvider_Twitter($twitterAccessToken);
       // Check if token is still valid
       if ($twitter->isAuthorized()) {
         $post['status'] = $params['post_content'];
@@ -164,7 +164,7 @@ function civicrm_api3_civisocial_user_updateStatus($params) {
  *
  * @return array
  */
-function civicrm_api3_civisocial_user_getFacebookPageFeed($params) {
+function civicrm_api3_social_user_getFacebookPageFeed($params) {
   $response = array();
   $session = CRM_Core_Session::singleton();
 
@@ -172,7 +172,7 @@ function civicrm_api3_civisocial_user_getFacebookPageFeed($params) {
   $fbAccessToken = $session->get('facebook_page_access_token');
   if ($pageId && $fbAccessToken) {
     // Connected to page
-    $facebook = new CRM_Civisocial_OAuthProvider_Facebook($fbAccessToken);
+    $facebook = new CRM_Social_OAuthProvider_Facebook($fbAccessToken);
 
     $feedParams = array();
     $feedParams['fields'] = 'story,message,link,type,from,updated_time';
@@ -236,7 +236,7 @@ function civicrm_api3_civisocial_user_getFacebookPageFeed($params) {
  *
  * @return array
  */
-function civicrm_api3_civisocial_user_getFacebookPageNotifications($params) {
+function civicrm_api3_social_user_getFacebookPageNotifications($params) {
   $session = CRM_Core_Session::singleton();
   $response = array();
 
@@ -244,7 +244,7 @@ function civicrm_api3_civisocial_user_getFacebookPageNotifications($params) {
   $fbAccessToken = $session->get('facebook_page_access_token');
   if ($pageId && $fbAccessToken) {
     // Connected to page
-    $facebook = new CRM_Civisocial_OAuthProvider_Facebook($fbAccessToken);
+    $facebook = new CRM_Social_OAuthProvider_Facebook($fbAccessToken);
 
     $notifParams = array();
     $notifParams['fields'] = 'title,from,updated_time,link';
@@ -309,14 +309,14 @@ function civicrm_api3_civisocial_user_getFacebookPageNotifications($params) {
  *
  * @return array
  */
-function civicrm_api3_civisocial_user_getTwitterFeed($params) {
+function civicrm_api3_social_user_getTwitterFeed($params) {
   $session = CRM_Core_Session::singleton();
   $response = array();
 
   $twitterId = $session->get('twitter_id');
   $twitterAccessToken = $session->get('twitter_access_token');
   if ($twitterId && $twitterAccessToken) {
-    $twitter = new CRM_Civisocial_OAuthProvider_Twitter($twitterAccessToken);
+    $twitter = new CRM_Social_OAuthProvider_Twitter($twitterAccessToken);
     if ($twitter->isAuthorized()) {
       $tweetsParams = array();
       $tweetsParams['count'] = 10;
