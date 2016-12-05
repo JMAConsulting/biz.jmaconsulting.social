@@ -1,5 +1,5 @@
 <?php
-class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
+class CRM_Social_BAO_SocialUserTest extends CiviUnitTestCase {
 
   /**
    * Clean up after tests.
@@ -23,14 +23,14 @@ class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
       'created_date' => date('YmdHis'),
     );
 
-    $socialUser = CRM_Civisocial_BAO_CivisocialUser::create($params);
+    $socialUser = CRM_Social_BAO_SocialUser::create($params);
     $this->assertEquals($contactId, $socialUser->contact_id, 'Check for contact id  creation.');
 
     // Update Access token
     $ids = array('id' => $socialUser->id);
     $params['access_token'] = 'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d';
 
-    $socialUser = CRM_Civisocial_BAO_CivisocialUser::create($params, $ids);
+    $socialUser = CRM_Social_BAO_SocialUser::create($params, $ids);
 
     $this->assertEquals($params['access_token'], $socialUser->access_token, 'Check for Access Token updation.');
   }
@@ -47,7 +47,7 @@ class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
       'created_date' => date('YmdHis'),
     );
 
-    $socialUser = CRM_Civisocial_BAO_CivisocialUser::create($params);
+    $socialUser = CRM_Social_BAO_SocialUser::create($params);
 
     $params2 = array(
       'social_user_id' => $socialUser->social_user_id,
@@ -55,10 +55,10 @@ class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
     );
 
     $defaults = array();
-    CRM_Civisocial_BAO_CivisocialUser::retrieve($params2, $defaults);
+    CRM_Social_BAO_SocialUser::retrieve($params2, $defaults);
     foreach ($params as $key => $value) {
       if ($key != 'created_date') {
-        $this->assertEquals($value, $defaults[$key], 'Check for CivisocialUser retrieval.');
+        $this->assertEquals($value, $defaults[$key], 'Check for SocialUser retrieval.');
       }
     }
   }
@@ -76,7 +76,7 @@ class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
     $result = civicrm_api3('Contact', 'create', $params);
     $contactId = $result['id'];
 
-    $contactId2 = CRM_Civisocial_BAO_CivisocialUser::createContact($params);
+    $contactId2 = CRM_Social_BAO_SocialUser::createContact($params);
 
     $this->assertEquals($contactId, $contactId2, 'Check contact creation.');
 
@@ -91,7 +91,7 @@ class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
       'email' => $email,
     );
 
-    $contactId = CRM_Civisocial_BAO_CivisocialUser::createContact($params);
+    $contactId = CRM_Social_BAO_SocialUser::createContact($params);
     $this->assertTrue(!is_null($contactId));
   }
 
@@ -108,9 +108,9 @@ class CRM_Civisocial_BAO_CivisocialUserTest extends CiviUnitTestCase {
       'created_date' => date('YmdHis'),
     );
 
-    $socialUser = CRM_Civisocial_BAO_CivisocialUser::create($params);
+    $socialUser = CRM_Social_BAO_SocialUser::create($params);
     // socialUserExists() returns contact ID if the user exists
-    $contactId2 = CRM_Civisocial_BAO_CivisocialUser::socialUserExists($socialUser->social_user_id, $socialUser->oauth_provider);
+    $contactId2 = CRM_Social_BAO_SocialUser::socialUserExists($socialUser->social_user_id, $socialUser->oauth_provider);
     $this->assertEquals($contactId2, $contactId, 'Check socialUserExists().');
   }
 

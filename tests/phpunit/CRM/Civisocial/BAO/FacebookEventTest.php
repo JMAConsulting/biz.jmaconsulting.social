@@ -1,5 +1,5 @@
 <?php
-class CRM_Civisocial_BAO_FacebookEvenTest extends CiviUnitTestCase {
+class CRM_Social_BAO_FacebookEvenTest extends CiviUnitTestCase {
 
   /**
    * Clean up after tests.
@@ -26,14 +26,14 @@ class CRM_Civisocial_BAO_FacebookEvenTest extends CiviUnitTestCase {
       'facebook_event_id' => 123456,
     );
 
-    $fbEventMap = CRM_Civisocial_BAO_FacebookEvent::create($params);
+    $fbEventMap = CRM_Social_BAO_FacebookEvent::create($params);
     $this->assertEquals($eventId, $fbEventMap->event_id, 'Check for Facebook event map creation.');
 
     // Update Access token
     $ids = array('id' => $fbEventMap->id);
     $params['facebook_event_id'] = 456789;
 
-    $fbEventMap = CRM_Civisocial_BAO_FacebookEvent::create($params, $ids);
+    $fbEventMap = CRM_Social_BAO_FacebookEvent::create($params, $ids);
     $this->assertEquals($params['facebook_event_id'], $fbEventMap->facebook_event_id, 'Check for Facebook event id updation.');
   }
 
@@ -52,14 +52,14 @@ class CRM_Civisocial_BAO_FacebookEvenTest extends CiviUnitTestCase {
       'facebook_event_id' => 123456,
     );
 
-    $fbEventMap = CRM_Civisocial_BAO_FacebookEvent::create($params);
+    $fbEventMap = CRM_Social_BAO_FacebookEvent::create($params);
 
     // Retrieve
     $params = array(
       'id' => $fbEventMap->id,
       'facebook_event_id' => 123456,
     );
-    $fbEventMap2 = CRM_Civisocial_BAO_FacebookEvent::retrieve($params);
+    $fbEventMap2 = CRM_Social_BAO_FacebookEvent::retrieve($params);
     $this->assertEquals($params['facebook_event_id'], $fbEventMap2->facebook_event_id, 'Check for Facebook event id retrieval.');
   }
 

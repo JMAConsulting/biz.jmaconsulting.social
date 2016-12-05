@@ -11,7 +11,7 @@
     </table>
   {else}
     <div id="integrate-facebook" class="help">
-      <a href="{crmURL p="civicrm/civisocial/login/facebook"}?continue={$currentUrl}">Login with Facebook</a> to integrate Facebook event.
+      <a href="{crmURL p="civicrm/social/login/facebook"}?continue={$currentUrl}">Login with Facebook</a> to integrate Facebook event.
     </div>
   {/if}
 {/if}

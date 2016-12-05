@@ -1,5 +1,5 @@
-Package: org.civicrm.civisocial
-Copyright (C) 2015, Siddharth Gupta <spam-filter@siddharthgupta.in>
+Package: biz.jmaconsulting.social
+Copyright (C) 2016, Joe Murray <joe.murray@jmaconsulting.biz>
 Licensed under the GNU Affero Public License 3.0 (below).
 
 -------------------------------------------------------------------------------
