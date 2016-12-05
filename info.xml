@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
-<extension key="org.civicrm.civisocial" type="module">
-  <file>civisocial</file>
-  <name>CiviSocial</name>
+<extension key="biz.jmaconsulting.social" type="module">
+  <file>social</file>
+  <name>Social</name>
   <description>Social Media Integration module extension for CiviCRM.</description>
   <license>AGPL-3.0</license>
   <maintainer>
-    <author>Siddharth Gupta</author>
-    <email>spam-filter@siddharthgupta.in</email>
+    <author>Joe Murray</author>
+    <email>joe.murray@jmaconsulting.biz</email>
   </maintainer>
   <urls>
-    <url desc="Main Extension Page">https://github.com/siddharthg/org.civicrm.civisocial</url>
-    <url desc="Documentation">https://github.com/siddharthg/org.civicrm.civisocial</url>
-    <url desc="Support">https://github.com/siddharthg/org.civicrm.civisocial/issues</url>
+    <url desc="Main Extension Page">https://github.com/JMAConsulting/biz.jmaconsulting.social</url>
+    <url desc="Documentation">https://github.com/JMAConsulting/biz.jmaconsulting.social</url>
+    <url desc="Support">https://github.com/JMAConsulting/biz.jmaconsulting.social/issues</url>
     <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
-  <releaseDate>2015-06-04</releaseDate>
-  <version>0.7</version>
+  <releaseDate>2016-12-05</releaseDate>
+  <version>0.1</version>
   <develStage>alpha</develStage>
   <compatibility>
     <ver>4.6</ver>
     <ver>4.7</ver>
   </compatibility>
-  <comments>This module is under development. See https://github.com/siddharthg/org.civicrm.civisocial</comments>
+  <comments></comments>
   <civix>
-    <namespace>CRM/Civisocial</namespace>
+    <namespace>CRM/Social</namespace>
   </civix>
 </extension>
