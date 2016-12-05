@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1" ?>
 
 <table>
-  <base>CRM/Civisocial</base>
-  <class>CivisocialUser</class>
-  <name>civicrm_civisocial_user</name>
-  <comment>User objects are defined by a civicrm_civisocial_user record plus a related civicrm_contact record.</comment>
+  <base>CRM/Social</base>
+  <class>SocialUser</class>
+  <name>civicrm_social_user</name>
+  <comment>User objects are defined by a civicrm_social_user record plus a related civicrm_contact record.</comment>
   <add>4.6</add>
 
   <field>
     <name>id</name>
     <type>int unsigned</type>
-    <title>Civisocial User ID</title>
+    <title>Social User ID</title>
     <import>true</import>
     <required>true</required>
     <comment>Unique User ID</comment>
@@ -77,7 +77,7 @@
   <field>
     <name>created_date</name>
     <type>timestamp</type>
-    <comment>When was the civisocial user was created.</comment>
+    <comment>When the civicrm social user was created.</comment>
     <required>false</required>
     <export>true</export>
     <default>NULL</default>
@@ -87,7 +87,7 @@
   <field>
     <name>modified_date</name>
     <type>timestamp</type>
-    <comment>When was the the civisocial user was created or modified or deleted.</comment>
+    <comment>When the civicrm social user was created or modified or deleted.</comment>
     <required>false</required>
     <export>true</export>
     <default>CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP</default>

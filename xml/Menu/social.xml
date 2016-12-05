@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/social/login</path>
+    <page_callback>CRM_Social_Page_Login</page_callback>
+    <title>Login</title>
+    <access_callback>1</access_callback>
+    <is_public>true</is_public>
+  </item>
+  <item>
+    <path>civicrm/social/callback</path>
+    <page_callback>CRM_Social_Page_OAuthCallback</page_callback>
+    <title>OAuthCallback</title>
+    <access_callback>1</access_callback>
+    <is_public>true</is_public>
+  </item>
+  <item>
+    <path>civicrm/social/logout</path>
+    <page_callback>CRM_Social_Page_Login</page_callback>
+    <title>Logout</title>
+    <access_callback>1</access_callback>
+    <is_public>true</is_public>
+  </item>
+  <item>
+    <path>civicrm/social/dashboard</path>
+    <page_callback>CRM_Social_Page_Dashboard</page_callback>
+    <title>Social Dashboard</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/social/dashboard/facebook</path>
+    <page_callback>CRM_Social_Page_Dashboard_Facebook</page_callback>
+    <title>Facebook Dashboard</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/social/dashboard/twitter</path>
+    <page_callback>CRM_Social_Page_Dashboard_Twitter</page_callback>
+    <title>Twitter Dashboard</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/social/appcredentials</path>
+    <page_callback>CRM_Social_Form_Settings_AppCredentials</page_callback>
+    <title>App Credentials</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/social/networks</path>
+    <page_callback>CRM_Social_Form_Settings_SocialNetworks</page_callback>
+    <title>Social Media Settings</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+    <item>
+    <path>civicrm/social/privacypolicy</path>
+    <page_callback>CRM_Social_Page_PrivacyPolicy</page_callback>
+    <title>Social Privacy Policy</title>
+    <access_callback>1</access_callback>
+    <is_public>true</is_public>
+  </item>
+  <item>
+    <path>civicrm/social/event/rsvpfacebookevent</path>
+    <page_callback>CRM_Social_Page_Facebook_RSVPEvent</page_callback>
+    <title>RSVP on Facebook</title>
+    <access_callback>1</access_callback>
+    <is_public>true</is_public>
+  </item>
+  <item>
+    <path>civicrm/admin/social/network/connect/facebookpage</path>
+    <page_callback>CRM_Social_Page_Facebook_ConnectPage</page_callback>
+    <title>Connect Facebook Page</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/social/network/disconnect/facebookpage</path>
+    <page_callback>CRM_Social_Page_Facebook_DisconnectPage</page_callback>
+    <title>Disconnect Facebook Page</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/social/network/connect/facebookpage/list</path>
+    <page_callback>CRM_Social_Page_Facebook_PageList</page_callback>
+    <title>Facebook Page List</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/social/network/connect/twitter</path>
+    <page_callback>CRM_Social_Page_Twitter_Connect</page_callback>
+    <title>Connect Twitter</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/admin/social/network/disconnect/twitter</path>
+    <page_callback>CRM_Social_Page_Twitter_Disconnect</page_callback>
+    <title>Disconnect Twitter</title>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+</menu>

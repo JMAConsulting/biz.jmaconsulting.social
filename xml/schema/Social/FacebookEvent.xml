@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1" ?>
 
 <table>
-  <base>CRM/Civisocial</base>
+  <base>CRM/Social</base>
   <class>FacebookEvent</class>
-  <name>civicrm_civisocial_facebook_event</name>
+  <name>civicrm_social_facebook_event</name>
   <comment>Map between CiviCRM event and Facebook Event</comment>
   <add>4.7</add>
 
