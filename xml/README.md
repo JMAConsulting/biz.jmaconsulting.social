@@ -14,4 +14,4 @@ You further need to add the following line to *[civicrm_root]/xml/schema/schema.
 <xi:include href="Social/files.xml" parse="xml" />
 ```
 
-Then running *xml/GenCode.php* will generate the DAO file in *[civicrm_root]/CRM/Civisocial/DAO*.
+Then running *xml/GenCode.php* will generate the DAO file in *[civicrm_root]/CRM/Social/DAO*.
