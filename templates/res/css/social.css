@@ -1,7 +1,7 @@
-.civisocial-wrapper {
+.social-wrapper {
 }
 
-.civisocial-box {
+.social-box {
   max-width: 500px;
   display: block;
   margin: 1.5em auto;
@@ -12,12 +12,12 @@
   vertical-align: top;
 }
 
-.civisocial-box-inline {
+.social-box-inline {
   display: inline-block;
   margin-right: 1em;
 }
 
-.civisocial-box .box-item {
+.social-box .box-item {
   display: inline-block;
   margin: 0.3em 0;
 }
@@ -59,7 +59,7 @@
   margin: 5px 0;
 }
 
-.civisocial-wrapper .login-status {
+.social-wrapper .login-status {
   padding: 0.4em ;
   padding-left: 45px;
   border-color: #bce8f1;
@@ -78,7 +78,7 @@
   position: relative;
 }
 
-.civisocial-wrapper .login-status a.picture {
+.social-wrapper .login-status a.picture {
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -86,13 +86,13 @@
   float: left;
 }
 
-.civisocial-wrapper .login-status a.picture img {
+.social-wrapper .login-status a.picture img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
 
-.civisocial-wrapper .login-status p {
+.social-wrapper .login-status p {
   display: inline-block;
   margin: 0;
   line-height: 25px;
@@ -100,16 +100,16 @@
   float: left;
 }
 
-.civisocial-wrapper .login-status p a {
+.social-wrapper .login-status p a {
   color: #fff;
   text-decoration: underline;
 }
 
-.civisocial-wrapper .login-status p a:hover {
+.social-wrapper .login-status p a:hover {
   text-decoration: none;
 }
 
-.civisocial-wrapper .login-status p.logout {
+.social-wrapper .login-status p.logout {
   display: block;
   position: absolute;
   right: 10px;
@@ -117,7 +117,7 @@
 }
 
 /* Social Buttons Style */
-.btn, .civisocial-wrapper a.btn {
+.btn, .social-wrapper a.btn {
   display: inline-block;
   background-position: 1em;
   background-repeat: no-repeat;

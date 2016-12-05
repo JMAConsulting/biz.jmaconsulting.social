@@ -26,7 +26,7 @@ CRM.$(function($) {
     postData = postData || {};
     showLoader($('#tweets'));
 
-  	CRM.api3('CivisocialUser', 'gettwitterfeed', postData).done(function(result) {
+  	CRM.api3('SocialUser', 'gettwitterfeed', postData).done(function(result) {
       if (!result.is_error) {
         processAjaxResult('tweets', result.values.data, postData);
 

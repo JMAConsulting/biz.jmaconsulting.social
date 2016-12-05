@@ -21,7 +21,7 @@ CRM.$(function($) {
     postData = postData || {};
 
     showLoader($('#feed'));
-  	CRM.api3('CivisocialUser', 'getfacebookpagefeed', postData).done(function(result) {
+  	CRM.api3('SocialUser', 'getfacebookpagefeed', postData).done(function(result) {
       if (!result.is_error) {
         processAjaxResult('feed', result.values.data, postData);
 
@@ -59,7 +59,7 @@ CRM.$(function($) {
     postData = postData || null;
 
     showLoader($('#notif'));
-    CRM.api3('CivisocialUser', 'getfacebookpagenotifications', postData).done(function(result) {
+    CRM.api3('SocialUser', 'getfacebookpagenotifications', postData).done(function(result) {
       if (!result.is_error) {
         processAjaxResult('notif', result.values.data, postData);
 

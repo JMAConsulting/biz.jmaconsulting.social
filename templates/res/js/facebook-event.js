@@ -26,7 +26,7 @@ CRM.$(function($) {
     cj(this).html('Fetching..');
     waitingForResponse = true;
 
-    CRM.api3('CivisocialUser', 'getfacebookeventinfo', {
+    CRM.api3('SocialUser', 'getfacebookeventinfo', {
       "event_id": eventId
     }).done(function(result) {
       if (result.is_error) {
