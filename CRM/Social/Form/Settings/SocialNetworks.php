@@ -33,7 +33,7 @@ class CRM_Social_Form_Settings_SocialNetworks extends CRM_Core_Form {
       if (isset($setting['quick_form_type'])) {
         $add = 'add' . $setting['quick_form_type'];
         if ($add == 'addElement') {
-          $this->$add($setting['html_type'], $name, ts($setting['title']), CRM_Utils_Array::value('html_attributes', $setting, array()));
+          $this->$add($setting['html_type'], $name, ts($setting['title']), CRM_Utils_Array::value('html_attributes', $setting));
         }
         else {
           $this->$add($name, ts($setting['title']));
